@@ -1,0 +1,16 @@
+name: pr-ci
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    container: node:20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+            node-version: '20'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
