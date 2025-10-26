@@ -3,13 +3,15 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  pr-build:
-    name: pr-build
+  pr:
     runs-on: ubuntu-latest
+    container: node:20
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '18' }
+      - uses: actions/setup-node@v3
+        with:
+            node-version: '20'
       - run: npm ci
       - run: npm run lint
       - run: npm test
+      - run: npm run build
