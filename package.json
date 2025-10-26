@@ -1,0 +1,19 @@
+{
+  "name": "pipeline-beispiel",
+  "version": "1.0.0",
+  "description": "Beispielrepo für GitHub Actions Pipelines - Node.js CI demo",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint . --ext .js",
+    "ci": "npm run lint && npm test"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "jest": "^29.0.0"
+  }
+}
